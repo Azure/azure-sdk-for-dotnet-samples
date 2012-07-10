@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Microsoft.Online.DirectoryApi.ServiceReference1.User>
+
+@{
+    ViewBag.Title = "QueryUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Query Users</h2>
+
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{    
+         <p> Title: @Html.TextBox("SearchString")  
+         <input type="submit" value="Filter" /></p> 
+}
+
+@if (Model != null)
+{
+    <br />
+<table>
+    <tr>
+        <th>
+            DisplayName
+        </th>        
+        <th>
+            UserPrincipalName
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.ActionLink(item.DisplayName, "Details", new { id = item.ObjectId })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserPrincipalName)
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>    
+    @Html.ActionLink("Back to Views", "Index")
+</p>
+
+}
+

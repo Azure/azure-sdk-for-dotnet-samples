@@ -1,0 +1,4 @@
+﻿@model System.DateTime
+
+@Html.TextBox("", DateTime.Now.Date.ToShortDateString(),
+    new { data_datepicker = true })

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b38ec85a-dd69-4607-8e21-01b850c38be5" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://msodsgraph-ppe.cloudapp.net" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="7ce2ed18-9cd2-445c-9abb-742d5f2e4f38" SourceId="1" SourceUrl="http://msodsgraph-ppe.cloudapp.net" />
+  </Metadata>
+  <Extensions />
+  <Parameters>
+    <Parameter Name="ClientAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\Microsoft.Data.Services.Client.dll" />
+    <Parameter Name="SpatialAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\System.Spatial.dll" />
+    <Parameter Name="ODataLibraryAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\Microsoft.Data.OData.dll" />
+    <Parameter Name="Version" Value="3.0" />
+  </Parameters>
+</ReferenceGroup>

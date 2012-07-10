@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Microsoft.Online.Demos.Aadexpense.Models.AuthorizedUser>
+           
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Add Users", "AddUsers", "Admin")
+<h2>Authorized Users</h2>
+
+<table class="IvoiceListView">
+    <tr>
+        <th>
+            User
+        </th>
+        <th>
+            Remove?
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+                        @Html.ActionLink("Delete", "RemoveUser", "Admin", new { id = item.AuthorizedUserID}, null) 
+             
+                
+            </td>
+        </tr>
+    }
+
+</table>
+
+

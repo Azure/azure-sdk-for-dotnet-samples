@@ -1,0 +1,20 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.Models.Item
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.date)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.amount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit","Item", new { id = Model.ItemID}, null) | 
+                @Html.ActionLink("Delete", "Delete", "Item", new { id = Model.ItemID }, null)
+            </td>
+        </tr>
+
+
+    

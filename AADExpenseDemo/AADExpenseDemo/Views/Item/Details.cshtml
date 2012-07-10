@@ -1,0 +1,31 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Item</legend>
+
+    <div class="display-label">date</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">amount</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.amount)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ItemID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
