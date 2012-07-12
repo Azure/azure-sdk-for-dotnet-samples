@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<ul>
+    @foreach (var trustedIssuer in new Microsoft.Samples.Waad.Federation.TrustedIssuersRepository().GetTrustedIdentityProviderUrls())
+    {
+        <li><a href="@trustedIssuer.LoginUrl">@trustedIssuer.DisplayName</a></li>
+    }
+</ul>

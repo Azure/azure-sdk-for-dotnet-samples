@@ -1,0 +1,250 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="Microsoft.Online.DirectoryApi" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="DirectoryObject">
+        <Key>
+          <PropertyRef Name="ObjectReference" />
+        </Key>
+        <Property Name="ObjectId" Type="Edm.Guid" />
+        <Property Name="ObjectReference" Type="Edm.String" Nullable="false" />
+        <Property Name="ObjectType" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="ReferencedObject" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="Mail" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="Contact" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="Department" Type="Edm.String" />
+        <Property Name="DirSyncEnabled" Type="Edm.Boolean" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="FacsimileTelephoneNumber" Type="Edm.String" />
+        <Property Name="GivenName" Type="Edm.String" />
+        <Property Name="JobTitle" Type="Edm.String" />
+        <Property Name="LastDirSyncTime" Type="Edm.DateTime" />
+        <Property Name="Mail" Type="Edm.String" />
+        <Property Name="Mobile" Type="Edm.String" />
+        <Property Name="PhysicalDeliveryOfficeName" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="ProvisioningErrors" Type="Collection(Microsoft.Online.DirectoryApi.ProvisioningError)" Nullable="false" />
+        <Property Name="ProxyAddresses" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="StreetAddress" Type="Edm.String" />
+        <Property Name="Surname" Type="Edm.String" />
+        <Property Name="TelephoneNumber" Type="Edm.String" />
+        <NavigationProperty Name="Manager" Relationship="Microsoft.Online.DirectoryApi.Contact_Manager" ToRole="Manager" FromRole="Contact" />
+        <NavigationProperty Name="DirectReports" Relationship="Microsoft.Online.DirectoryApi.Contact_DirectReports" ToRole="DirectReports" FromRole="Contact" />
+        <NavigationProperty Name="MemberOf" Relationship="Microsoft.Online.DirectoryApi.Contact_MemberOf" ToRole="MemberOf" FromRole="Contact" />
+      </EntityType>
+      <ComplexType Name="ProvisioningError">
+        <Property Name="ErrorDetail" Type="Edm.String" />
+        <Property Name="Resolved" Type="Edm.Boolean" />
+        <Property Name="ServiceInstance" Type="Edm.String" />
+        <Property Name="Timestamp" Type="Edm.DateTime" />
+      </ComplexType>
+      <EntityType Name="Group" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DirSyncEnabled" Type="Edm.Boolean" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="LastDirSyncTime" Type="Edm.DateTime" />
+        <Property Name="Mail" Type="Edm.String" />
+        <Property Name="MailEnabled" Type="Edm.Boolean" />
+        <Property Name="ProvisioningErrors" Type="Collection(Microsoft.Online.DirectoryApi.ProvisioningError)" Nullable="false" />
+        <Property Name="ProxyAddresses" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="SecurityEnabled" Type="Edm.Boolean" />
+        <NavigationProperty Name="Members" Relationship="Microsoft.Online.DirectoryApi.Group_Members" ToRole="Members" FromRole="Group" />
+        <NavigationProperty Name="MemberOf" Relationship="Microsoft.Online.DirectoryApi.Group_MemberOf" ToRole="MemberOf" FromRole="Group" />
+      </EntityType>
+      <EntityType Name="SubscribedSku">
+        <Key>
+          <PropertyRef Name="ObjectReference" />
+        </Key>
+        <Property Name="CapabilityStatus" Type="Edm.String" />
+        <Property Name="ConsumedUnits" Type="Edm.Int32" />
+        <Property Name="ObjectReference" Type="Edm.String" Nullable="false" />
+        <Property Name="PrepaidUnits" Type="Microsoft.Online.DirectoryApi.LicenseUnitsDetail" />
+        <Property Name="ServicePlans" Type="Collection(Microsoft.Online.DirectoryApi.ServicePlanInfo)" Nullable="false" />
+        <Property Name="SkuId" Type="Edm.Guid" />
+        <Property Name="SkuPartNumber" Type="Edm.String" />
+      </EntityType>
+      <ComplexType Name="LicenseUnitsDetail">
+        <Property Name="Enabled" Type="Edm.Int32" />
+        <Property Name="Suspended" Type="Edm.Int32" />
+        <Property Name="Warning" Type="Edm.Int32" />
+      </ComplexType>
+      <ComplexType Name="ServicePlanInfo">
+        <Property Name="ServicePlanId" Type="Edm.Guid" />
+        <Property Name="ServicePlanName" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="Role" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="Builtin" Type="Edm.Boolean" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="RoleDisabled" Type="Edm.Boolean" />
+        <NavigationProperty Name="Members" Relationship="Microsoft.Online.DirectoryApi.Role_Members" ToRole="Members" FromRole="Role" />
+      </EntityType>
+      <EntityType Name="TenantDetail" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="AssignedPlans" Type="Collection(Microsoft.Online.DirectoryApi.AssignedPlan)" Nullable="false" />
+        <Property Name="AuthorizedServiceInstances" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="CompanyLastDirSyncTime" Type="Edm.DateTime" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="CountryLetterCode" Type="Edm.String" />
+        <Property Name="DirSyncEnabled" Type="Edm.Boolean" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="MarketingNotificationEmails" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="PreferredLanguage" Type="Edm.String" />
+        <Property Name="ProvisionedPlans" Type="Collection(Microsoft.Online.DirectoryApi.ProvisionedPlan)" Nullable="false" />
+        <Property Name="ProvisioningErrors" Type="Collection(Microsoft.Online.DirectoryApi.ProvisioningError)" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="Street" Type="Edm.String" />
+        <Property Name="TechnicalNotificationMails" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="TelephoneNumber" Type="Edm.String" />
+        <Property Name="TenantType" Type="Edm.String" />
+        <Property Name="VerifiedDomains" Type="Collection(Microsoft.Online.DirectoryApi.VerifiedDomain)" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="AssignedPlan">
+        <Property Name="AssignedTimestamp" Type="Edm.DateTime" />
+        <Property Name="CapabilityStatus" Type="Edm.String" />
+        <Property Name="ServiceInstance" Type="Edm.String" />
+        <Property Name="ServicePlanId" Type="Edm.Guid" />
+        <Property Name="SubscribedPlanId" Type="Edm.Guid" />
+      </ComplexType>
+      <ComplexType Name="ProvisionedPlan">
+        <Property Name="CapabilityStatus" Type="Edm.String" />
+        <Property Name="ServiceInstance" Type="Edm.String" />
+        <Property Name="ProvisioningStatus" Type="Edm.String" />
+        <Property Name="SubscribedPlanId" Type="Edm.Guid" />
+      </ComplexType>
+      <ComplexType Name="VerifiedDomain">
+        <Property Name="Capabilities" Type="Edm.String" />
+        <Property Name="Default" Type="Edm.Boolean" />
+        <Property Name="Initial" Type="Edm.Boolean" />
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="Type" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="User" BaseType="Microsoft.Online.DirectoryApi.DirectoryObject">
+        <Property Name="AccountEnabled" Type="Edm.Boolean" />
+        <Property Name="AssignedLicenses" Type="Collection(Microsoft.Online.DirectoryApi.AssignedLicense)" Nullable="false" />
+        <Property Name="AssignedPlans" Type="Collection(Microsoft.Online.DirectoryApi.AssignedPlan)" Nullable="false" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="Department" Type="Edm.String" />
+        <Property Name="DirSyncEnabled" Type="Edm.Boolean" />
+        <Property Name="DisplayName" Type="Edm.String" />
+        <Property Name="FacsimileTelephoneNumber" Type="Edm.String" />
+        <Property Name="GivenName" Type="Edm.String" />
+        <Property Name="JobTitle" Type="Edm.String" />
+        <Property Name="LastDirSyncTime" Type="Edm.DateTime" />
+        <Property Name="Mail" Type="Edm.String" />
+        <Property Name="Mobile" Type="Edm.String" />
+        <Property Name="OtherMails" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="PasswordPolicies" Type="Edm.String" />
+        <Property Name="PhysicalDeliveryOfficeName" Type="Edm.String" />
+        <Property Name="PostalCode" Type="Edm.String" />
+        <Property Name="PreferredLanguage" Type="Edm.String" />
+        <Property Name="ProvisionedPlans" Type="Collection(Microsoft.Online.DirectoryApi.ProvisionedPlan)" Nullable="false" />
+        <Property Name="ProvisioningErrors" Type="Collection(Microsoft.Online.DirectoryApi.ProvisioningError)" Nullable="false" />
+        <Property Name="ProxyAddresses" Type="Collection(Edm.String)" Nullable="false" />
+        <Property Name="State" Type="Edm.String" />
+        <Property Name="StreetAddress" Type="Edm.String" />
+        <Property Name="Surname" Type="Edm.String" />
+        <Property Name="TelephoneNumber" Type="Edm.String" />
+        <Property Name="UsageLocation" Type="Edm.String" />
+        <Property Name="UserPrincipalName" Type="Edm.String" />
+        <NavigationProperty Name="Manager" Relationship="Microsoft.Online.DirectoryApi.User_Manager" ToRole="Manager" FromRole="User" />
+        <NavigationProperty Name="DirectReports" Relationship="Microsoft.Online.DirectoryApi.User_DirectReports" ToRole="DirectReports" FromRole="User" />
+        <NavigationProperty Name="MemberOf" Relationship="Microsoft.Online.DirectoryApi.User_MemberOf" ToRole="MemberOf" FromRole="User" />
+      </EntityType>
+      <ComplexType Name="AssignedLicense">
+        <Property Name="DisabledPlans" Type="Collection(Edm.Guid)" Nullable="false" />
+        <Property Name="SkuId" Type="Edm.Guid" />
+      </ComplexType>
+      <Association Name="Contact_Manager">
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="Manager" Multiplicity="0..1" />
+        <End Type="Microsoft.Online.DirectoryApi.Contact" Role="Contact" Multiplicity="*" />
+      </Association>
+      <Association Name="Contact_DirectReports">
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="DirectReports" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.Contact" Role="Contact" Multiplicity="*" />
+      </Association>
+      <Association Name="Contact_MemberOf">
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="MemberOf" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.Contact" Role="Contact" Multiplicity="*" />
+      </Association>
+      <Association Name="Group_Members">
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="Members" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.Group" Role="Group" Multiplicity="*" />
+      </Association>
+      <Association Name="Group_MemberOf">
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="MemberOf" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.Group" Role="Group" Multiplicity="*" />
+      </Association>
+      <Association Name="Role_Members">
+        <End Type="Microsoft.Online.DirectoryApi.Role" Role="Role" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="Members" Multiplicity="*" />
+      </Association>
+      <Association Name="User_Manager">
+        <End Type="Microsoft.Online.DirectoryApi.User" Role="User" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="Manager" Multiplicity="0..1" />
+      </Association>
+      <Association Name="User_DirectReports">
+        <End Type="Microsoft.Online.DirectoryApi.User" Role="User" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="DirectReports" Multiplicity="*" />
+      </Association>
+      <Association Name="User_MemberOf">
+        <End Type="Microsoft.Online.DirectoryApi.User" Role="User" Multiplicity="*" />
+        <End Type="Microsoft.Online.DirectoryApi.ReferencedObject" Role="MemberOf" Multiplicity="*" />
+      </Association>
+      <EntityContainer Name="DirectoryDataService" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="DirectoryObjects" EntityType="Microsoft.Online.DirectoryApi.DirectoryObject" />
+        <EntitySet Name="ReferencedObjects" EntityType="Microsoft.Online.DirectoryApi.ReferencedObject" />
+        <EntitySet Name="Contacts" EntityType="Microsoft.Online.DirectoryApi.Contact" />
+        <EntitySet Name="Groups" EntityType="Microsoft.Online.DirectoryApi.Group" />
+        <EntitySet Name="SubscribedSkus" EntityType="Microsoft.Online.DirectoryApi.SubscribedSku" />
+        <EntitySet Name="Roles" EntityType="Microsoft.Online.DirectoryApi.Role" />
+        <EntitySet Name="TenantDetails" EntityType="Microsoft.Online.DirectoryApi.TenantDetail" />
+        <EntitySet Name="Users" EntityType="Microsoft.Online.DirectoryApi.User" />
+        <AssociationSet Name="Contact_Manager_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Contact_Manager">
+          <End Role="Contact" EntitySet="Contacts" />
+          <End Role="Manager" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="Contact_DirectReports_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Contact_DirectReports">
+          <End Role="Contact" EntitySet="Contacts" />
+          <End Role="DirectReports" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="Contact_MemberOf_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Contact_MemberOf">
+          <End Role="Contact" EntitySet="Contacts" />
+          <End Role="MemberOf" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="Group_Members_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Group_Members">
+          <End Role="Group" EntitySet="Groups" />
+          <End Role="Members" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="Group_MemberOf_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Group_MemberOf">
+          <End Role="Group" EntitySet="Groups" />
+          <End Role="MemberOf" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="Role_Members_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.Role_Members">
+          <End Role="Role" EntitySet="Roles" />
+          <End Role="Members" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="User_Manager_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.User_Manager">
+          <End Role="User" EntitySet="Users" />
+          <End Role="Manager" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="User_DirectReports_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.User_DirectReports">
+          <End Role="User" EntitySet="Users" />
+          <End Role="DirectReports" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+        <AssociationSet Name="User_MemberOf_ReferencedObjects" Association="Microsoft.Online.DirectoryApi.User_MemberOf">
+          <End Role="User" EntitySet="Users" />
+          <End Role="MemberOf" EntitySet="ReferencedObjects" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgIdFederationSample", "OrgIdFederationSample.csproj", "{574D8926-CB35-4EF7-9F90-D65E77AED641}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Samples.Waad.Federation", "..\..\libraries\tokenHandler\Microsoft.Samples.Waad.Federation\Microsoft.Samples.Waad.Federation.csproj", "{0D03F53D-3A3F-4350-B56E-D5201450597B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{574D8926-CB35-4EF7-9F90-D65E77AED641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{574D8926-CB35-4EF7-9F90-D65E77AED641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{574D8926-CB35-4EF7-9F90-D65E77AED641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{574D8926-CB35-4EF7-9F90-D65E77AED641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D03F53D-3A3F-4350-B56E-D5201450597B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D03F53D-3A3F-4350-B56E-D5201450597B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D03F53D-3A3F-4350-B56E-D5201450597B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D03F53D-3A3F-4350-B56E-D5201450597B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

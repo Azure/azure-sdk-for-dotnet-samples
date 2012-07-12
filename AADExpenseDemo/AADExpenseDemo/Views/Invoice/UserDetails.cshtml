@@ -1,0 +1,220 @@
+﻿@model Microsoft.Online.DirectoryApi.ServiceReference1.User
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee Details</h2>
+
+<table>
+    <legend>User</legend>
+    <tr>
+    <td>AccountEnabled</td>
+    <td>
+        @Html.DisplayFor(model => model.AccountEnabled)
+    </td>
+    </tr>
+    <tr>
+    <td>City</td>
+    <td>
+        @Html.DisplayFor(model => model.City)
+    </td>
+    </tr>
+    <tr>
+    <td>Country</td>
+    <td>
+        @Html.DisplayFor(model => model.Country)
+    </td>
+    </tr>
+    <tr>
+    <td>Department</td>
+    <td>
+        @Html.DisplayFor(model => model.Department)
+    </td>
+    </tr>
+
+    <tr>
+    <td>DirSyncEnabled</td>
+    <td>
+        @Html.DisplayFor(model => model.DirSyncEnabled)
+    </td>
+    </tr>
+
+    <tr>
+    <td>DisplayName</td>
+    <td>
+        @Html.DisplayFor(model => model.DisplayName)
+    </td>
+    </tr>
+
+    <tr>
+    <td>FacsimileTelephoneNumber</td>
+    <td>
+        @Html.DisplayFor(model => model.FacsimileTelephoneNumber)
+    </td>
+    </tr>
+
+    <tr>
+    <td>GivenName</td>
+    <td>
+        @Html.DisplayFor(model => model.GivenName)
+    </td>
+    </tr>
+
+    <tr>
+    <td>JobTitle</td>
+    <td>
+        @Html.DisplayFor(model => model.JobTitle)
+    </td>
+    </tr>
+
+    <tr>
+    <td>LastDirSyncTime</td>
+    <td>
+        @Html.DisplayFor(model => model.LastDirSyncTime)
+    </td>
+
+    <tr>
+    <td>Mail</td>
+    <td>
+        @Html.DisplayFor(model => model.Mail)
+    </td>
+    </tr>
+
+    <tr>
+    <td>Mobile</td>
+    <td>
+        @Html.DisplayFor(model => model.Mobile)
+    </td>
+    </tr>
+
+    <tr>
+    <td>PasswordPolicies</td>
+    <td>
+        @Html.DisplayFor(model => model.PasswordPolicies)
+    </td>
+    </tr>
+
+    <tr>
+    <td>PhysicalDeliveryOfficeName</td>
+    <td>
+        @Html.DisplayFor(model => model.PhysicalDeliveryOfficeName)
+    </td>
+    </tr>
+
+    <tr>
+    <td>PostalCode</td>
+    <td>
+        @Html.DisplayFor(model => model.PostalCode)
+    </td>
+    </tr>
+
+    <tr>
+    <td>PreferredLanguage</td>
+    <td>
+        @Html.DisplayFor(model => model.PreferredLanguage)
+    </td>
+    </tr>
+
+    <tr>
+    <td>State</td>
+    <td>
+        @Html.DisplayFor(model => model.State)
+    </td>
+
+    <tr>
+    <td>StreetAddress</td>
+    <td>
+        @Html.DisplayFor(model => model.StreetAddress)
+    </td>
+    </tr>
+
+    <tr>
+    <td>Surname</td>
+    <td>
+        @Html.DisplayFor(model => model.Surname)
+    </td>
+    </tr>
+
+    <tr>
+    <td>TelephoneNumber</td>
+    <td>
+        @Html.DisplayFor(model => model.TelephoneNumber)
+    </td>
+    </tr>
+
+    <tr>
+    <td>UsageLocation</td>
+    <td>
+        @Html.DisplayFor(model => model.UsageLocation)
+    </td>
+    </tr>
+
+    <tr>
+    <td>UserPrincipalName</td>
+    <td>
+        @Html.DisplayFor(model => model.UserPrincipalName)
+    </td>
+    </tr>
+
+    <tr>
+    <td>ObjectId</td>
+    <td>
+        @Html.DisplayFor(model => model.ObjectId)
+    </td>
+    </tr>
+
+    <tr>
+    <td>ObjectReference</td>
+    <td>
+        @Html.DisplayFor(model => model.ObjectReference)
+    </td>
+    </tr>
+
+    <tr>
+    <td>ObjectType</td>
+    <td>
+        @Html.DisplayFor(model => model.ObjectType)
+    </td>
+    </tr>
+
+    @if(ViewBag.Manager != null)
+    {
+        <tr>
+            <td>Manager</td>
+            <td>@ViewBag.Manager.DisplayName</td>
+        </tr>
+    }
+</table>
+
+@{
+    if(ViewBag.DirectReports.Count != 0)
+    {
+        <h3>Direct Reports</h3>
+        <table>
+        @foreach (var assignedLic in Model.AssignedLicenses)
+        {
+            <tr>assignedLic.SkuId</tr>
+        }        
+        </table>
+    }
+}
+
+@{
+    if (Model.AssignedLicenses.Count != 0)
+    {
+        <h3>Licenses</h3>
+        <table>
+        @foreach (var assignedLic in Model.AssignedLicenses)
+        {
+            <tr>assignedLic.SkuId</tr>
+        }        
+        </table>
+    }
+}
+
+<p>    
+    @Html.ActionLink("Back to List", "Users", new { type = "current" })
+</p>
+

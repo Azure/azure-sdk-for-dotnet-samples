@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (User.Identity.IsAuthenticated) {
+	<h4>Claim list:</h4>
+	<ul>
+		@foreach (string claim in ((Microsoft.IdentityModel.Claims.IClaimsIdentity)this.User.Identity).Claims.Select(c => c.ClaimType + " : " + c.Value)) {
+			<li>@claim</li>
+		}
+	</ul>
+}
+
+<a href="@Url.Action("Logout", "Account")">logout</a>

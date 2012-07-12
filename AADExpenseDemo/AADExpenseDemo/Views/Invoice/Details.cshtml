@@ -1,0 +1,64 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.Models.Invoice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Invoice Details for @ViewBag.Reason</h2>
+
+<fieldset>
+    <div class="InvoiceDetailView">
+    <legend>Invoice</legend>
+
+    <div class="display-label">Employee</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee)
+    </div>
+
+    <div class="display-label">Reason</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reason)
+    </div>
+
+    <div class="display-label">SubmitDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubmitDate)
+    </div>
+    </div>
+    
+</fieldset>
+<p>
+    @Html.ActionLink("Edit Invoice", "Edit", new { id=Model.InvoiceID }) |
+    @Html.ActionLink("Back to Invoices", "Index")
+</p>
+
+
+<h2>Invoice Items</h2>
+<div class="InvoiceDetailViewItems">
+    
+    <table class="InvoiceListView">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Expense
+        </th>
+        <th>
+            Amount
+        </th>
+        <th>
+        </th>
+    </tr>
+
+    @foreach( var item in Model.Items)
+    {
+        @Html.Partial("_Items", item)
+    
+    }
+    
+    </table>
+
+    @Html.ActionLink("Add a new item", "Create", "Item", new  { InvoiceID = Model.InvoiceID}, null)
+</div>

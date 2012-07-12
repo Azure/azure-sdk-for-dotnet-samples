@@ -1,0 +1,32 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.Models.Signup
+
+@{
+    ViewBag.Title = "Authorize2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="Excitement">
+<h2>You're Done! Welcome to Azure Active Directory!</h2>
+
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+<h3 class="Steps">Your Azure Active Directory Tenant is now authorized to use this application!</h3>
+
+<p> You can now go to the login page of this application and sign-in to use the Azure Active Directory Demo Expense Application.</p>
+
+<h3>Some things to look for:</h3>
+<li><b>Single Sign-On through Azure Active Directory!</b> Customers get the familiar and trusted logon screen for their subscription, along with password recovery and reset options.</li>
+<li><b>Seamless integration with your directory.</b> You can authorize users to use the Expense Application from the Administrator's tab!</li>
+<li><b>Knowledge of your organization's hierarchy!</b> When employees submit an expense invoice, their manager is automatically populated and the expense submitted to the manager.</li>
+<li><b>Knowledge of your organization's employee role memberships!</b> Managers, when they log in, will see their expense reports to approve for only their employees.</li>
+<li><b>Detailed User information!</b> In the Administrator's tab, click on Employee Details and see all of the information for that employee that is in Azure Active Directory.</li>
+
+<p>... all of this without any custom work on your part</p>
+
+<h3>There is a lot more to discover! Log in now and play around!</h3>
+    <p>Also, make sure to take a look at the <a href="http://msdn.microsoft.com/en-us/library/hh974476.aspx">MSDN documentation here</a> and the documentation included with the application to understand the application and detail, as well as start on your own app!</p>
+
+@Html.ActionLink("Click here to login now", "Login", "Account")
+
+</div>

@@ -1,0 +1,119 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.Models.Signup
+
+@{
+    ViewBag.Title = "Authorize1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Authorizing Your Application</h2>
+
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+<h3 class="Steps">Step 2: Create The Service Principal with PowerShell</h3>
+
+<p> This step will require you to perform some pre-requisites in order to proceed:</p>
+
+<ul>
+    <li>Download Microsoft Online Services Module for Windows PowerShell <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> and install it on your machine.</li>
+    <li>Download our <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">PowerShell authorization script here.</a> This will walk you through creating the Service Principal.</li>
+    <li>Create some users in the Azure Active Directory tenant. It is important the users who will use the application have a manager who can approve expense invoices.</li>
+</ul>
+<p>Once these steps are completed, run the PowerShell script indicated above, then put the values in the field below. We will use this to configure the Expense application for you.</p>
+
+<h4 class="Steps">Detailed Walkthrough</h4>
+
+<h5>First: Download the Microsoft Online Services Modules for Windows PowerShell</h5>
+    
+    <p>
+        The identity platform used for Azure Active Directory organizations will only issue Identity tokens to your web application after you register the application in the Microsoft online directory for the organization.  
+        To register the app, you need to download the Microsoft Online Services Module for PowerShell. The PowerShell module includes PS cmdlets used for managing identity federation and assigning 
+        user licenses for Office365.  New extensions to the module include PS cmdlets for adding and managing service principals which are used to register your application.
+        Refer to the Azure Active Directory online help page for information on how to install the MSO Services module for PowerShell.
+    </p>
+<p>You can get the latest PowerShell cmdlets <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> here. </p>
+<p>
+    After installing the PowerShell module, run the Azure Active Directory Demo script you downloaded to create the Service Principal in the Windows PowerShell command prompt.
+</p>
+
+<h5>Run the provided PowerShell script to create the Service Principal for your selected Office365 tenant</h5>
+
+<p>Inside of the Microsoft Online Services Module for Windows PowerShell command window, execute the <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">provided PowerShell script</a>. A walkthrough of what this PowerShell script does is available here. </p>
+
+<p>
+    <div class="code">PS C:\Windows\system32> CreateServicePrincipal.ps1</div>
+</p>
+
+While executing this script, you will be prompted for the following:
+
+<h5>Connect to the Azure Active Directory  Using Administrator Credentials</h5>
+<p>
+    Connect to your online directory for Office365 using your company admin credentials for your selected Office365 account. This will prompt you for credentials – enter the admin credentials for your organization.
+</p>
+
+
+<h5>Save the output from the PowerShell (like in a Notepad file) for later use.</h5>
+
+<p>You should see the output from the PowerShell cmdlet like below:</p>
+
+<p>
+    <div class="code">
+        <p>The following symmetric key was created as one was not supplied qY+Drf20Zz+A4t2w
+e3PebCopoCugO76My+JMVsqNBFc=</p>
+<p></p>
+
+Company ID (you will need to put this in the portal): a7456b11-6fe2-4e5b-bc83-67508c201e4b<br />
+AppPrincipal ID (you will need to put this in the portal): 511ac17c-e338-41bb-8f89-03138d10bff8<br />
+App Principal Secret: FStnXT1QON84B5o38aEmFdlNhEnYtzJ91Gg/JH/Jxiw=<br />
+Audience URI: 511ac17c-e338-41bb-8f89-03138d10bff8@a7456b11-6fe2-4e5b-bc83-67508c201e4b
+<p></p>
+
+
+    </div>
+</p>
+<h5>Paste the Company ID and the ApplicationPrincipalID from the PowerShell cmdlet below:</h5>
+<p> 
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Application Principal</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyId)
+            @Html.ValidationMessageFor(model => model.CompanyId)
+        </div>
+        
+                <div class="editor-label">
+            @Html.LabelFor(model => model.AppPrincipalId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AppPrincipalId)
+            @Html.ValidationMessageFor(model => model.AppPrincipalId)
+        </div>
+        
+                <div class="editor-label">
+            @Html.LabelFor(model => model.DomainName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DomainName)
+            @Html.ValidationMessageFor(model => model.DomainName)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <p>
+            <input type="submit" value="Complete Setup" />
+        </p>
+    </fieldset>
+}

@@ -1,0 +1,19 @@
+﻿@model Microsoft.Online.Demos.Aadexpense.ServiceReference1.User
+
+@{
+    ViewBag.Title = "QueryUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Query Users</h2>
+
+<script src="@Url.Content("http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{    
+         <p> Title: @Html.TextBox("SearchString")  
+         <input type="submit" value="Filter" /></p> 
+}
+
+
