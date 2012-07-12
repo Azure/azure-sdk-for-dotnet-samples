@@ -24,9 +24,10 @@
     Authorizing this application will require the following pre-requisites:
     <ul>
         <li><a href="http://www.microsoft.com/en-us/office365/online-software.aspx#fbid=8qpYgwknaWN">Create a Microsoft Azure Active Directory Trial Tenant</a> (we do not recommend you use a production tenant for this demo)</li>
-        <li>Download <a href="https://bposast.vo.msecnd.net/MSOPMW/5164.009/amd64/administrationconfig-en.msi">Microsoft Online Services Module for Windows PowerShell</a></li>
-        <li>Create Some Users in the Azure Active Directory tenant</li>
-        <li>Come back to this application and click on the  @Html.ActionLink("Authorize link", "Authorize", "Signup") . This will require you to log in to the Azure Active Directory Trial tenant you just created.</li>
+        <li>Download Microsoft Online Services Module for Windows PowerShell <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> and install it on your machine.</li>
+    <li>Download our <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">PowerShell authorization script here.</a> This will walk you through creating the Service Principal.</li>
+    <li>Create some users in the Azure Active Directory tenant. It is important the users who will use the application have a manager who can approve expense invoices.</li>
+        <li>Come back to this application and click on the  @Html.ActionLink("Authorize link", "Authorize1", "Signup") . This will require you to log in to the Azure Active Directory Trial tenant you just created.</li>
     </ul>
 
     We cover each of these in detail below:
@@ -46,22 +47,15 @@
         user licenses for Office365.  New extensions to the module include PS cmdlets for adding and managing service principals which are used to register your application.
         Refer to the Azure Active Directory online help page for information on how to install the MSO Services module for PowerShell.
     </p>
-    <p>You can get the latest PowerShell commadlets <a href="https://bposast.vo.msecnd.net/MSOPMW/5164.009/amd64/administrationconfig-en.msi">here.</a> </p>
+    <p>You can get the latest PowerShell cmdlets <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> here. </p>
     <p>
-        After installing the PowerShell module, start the Microsoft Online Services Module for Windows PowerShell command prompt and wait until you are ready to click the @Html.ActionLink("Authorize link", "Authorize", "Signup") below.
+        After installing the PowerShell module, start the Microsoft Online Services Module for Windows PowerShell command prompt and wait until you are ready to click the @Html.ActionLink("Authorize link", "Authorize1", "Signup") below.
     </p>
 
     <h4>Authorize the Application</h4>
     <p>
 
-        Once you have the following steps completed, you are ready to authorize this demonstration app with your non-production Office365 tenant. Go to the @Html.ActionLink("Authorize link", "Authorize", "Signup") for next steps.
+        Once you have the following steps completed, you are ready to authorize this demonstration app with your non-production Office365 tenant. Go to the @Html.ActionLink("Authorize link", "Authorize1", "Signup") for next steps.
    
-    </p>
-
-    <h4>Remove the Applciation</h4>
-
-    <p>
-        If you wish to remove a tenant you have created from this applciation, you can do so by clicking the @Html.ActionLink("Remove Authorization link", "Remove", "Signup") 
-
     </p>
 }
