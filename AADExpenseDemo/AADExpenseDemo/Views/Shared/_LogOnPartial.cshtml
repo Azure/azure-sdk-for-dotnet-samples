@@ -1,0 +1,8 @@
+﻿@if(Request.IsAuthenticated) {
+    
+    <text>Welcome <strong>@ViewData["Name"]</strong>!
+    [ @Html.ActionLink("Sign out", "Logout", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("Sign In", "Login", "Account") | @Html.ActionLink("Sign Up", "Index", "Signup")]
+}

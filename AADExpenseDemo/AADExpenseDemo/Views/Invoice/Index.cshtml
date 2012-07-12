@@ -1,0 +1,72 @@
+﻿@using System.Globalization
+@model IEnumerable<Microsoft.Online.Demos.Aadexpense.Models.Invoice>
+
+@{
+    ViewBag.Title = "AAD Invoice Application Demonstration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Invoices</h2>
+
+
+<table class="IvoiceListView">
+    <tr>
+        <th>
+            Invoice
+        </th>
+        <th>
+            Date Submitted
+        </th>
+        <th>
+            Employee
+        </th>
+        <th>Reason
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink(item.InvoiceID.ToString(CultureInfo.InvariantCulture), "Details", "Invoice", new { id=item.InvoiceID}, null)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmitDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @switch(item.InvoiceStatus)
+                {
+                    case 0:
+                        @Html.AttributeEncode("Not Submitted:  ")
+                        @Html.ActionLink("Submit", "Submit", "Invoice", new { InvoiceId = item.InvoiceID }, null) 
+                        @Html.AttributeEncode(" | ")
+                        @Html.ActionLink("Delete", "Delete", "Invoice", new { id = item.InvoiceID }, null) 
+                   break;
+                    case 1: @Html.AttributeEncode("In Progress")
+                       break;
+                    case 2: @Html.AttributeEncode("Approved")
+                       break;
+                    case 3: @Html.AttributeEncode("Rejected")
+                       break;
+                    default: @Html.AttributeEncode("Error in Expense Report")
+                        break;
+                }
+             
+                
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Create A New Invoice", "Create")
+</p>

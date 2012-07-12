@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "_Doc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id =docmain>
+    
+    <div id="DocLeft">@RenderSection("Content")</div>
+    <div id="DocRight">
+        
+          <nav>
+               Getting Started Guide
+              <ul id="docmenu">
+                  <li>@Html.ActionLink("Authorization FAQ", "Doc_Authorization", "Documentation")</li>
+                  <li>@Html.ActionLink("Help Creating Managers", "Doc_CreatingManagers", "Documentation")</li>
+                  <li>@Html.ActionLink("Design Details", "Doc_DesignDetail", "Documentation")</li>
+                  <li>@Html.ActionLink("Helpful MSO PowerShell Commands", "Doc_PowerShell", "Documentation")</li>
+              </ul>
+              
+              Other Developer Resources
+              <ul id="docmenu">
+                  <li><a href="https://graphexplorer.cloudapp.net/" title="Azure Active Directory Directory Explorer">AAD Graph Explorer</a></li>
+                  <li><a href="http://msdn.microsoft.com/en-us/library/hh974476.aspx" title="MSDN Content on the Graph API">MSDN Content on the Azure AD</a></li>
+              </ul>
+
+          </nav>
+
+    </div>
+    
+
+</div>
+

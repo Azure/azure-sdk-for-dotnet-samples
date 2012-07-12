@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Microsoft.Online.Demos.Aadexpense.Models.Invoice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+@if (Request.IsAuthenticated)
+{
+    <p><div class="Steps">Welcome @ViewBag.Name !</div></p>
+    
+    <table>
+            <tr>Job Title: @ViewBag.JobTitle </tr>
+            <tr>Department: @ViewBag.Department</tr>
+    </table>
+
+    
+    <p>You can use this sample application to manage Expense reports for your company. This sample application demonstrates using the Azure Active Directory WebSSO and Graph API.</p>
+    
+        }
+else
+{
+    <a href="https://github.com/WindowsAzure/azure-sdk-for-dotnet-samples"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position: fixed; right: 0; top: 0; border: none;"></a>
+    <p>
+        <h2 class="Steps">Your Small Business uses Office365. Now start using the benefits!</h2>
+        <div id="HomeContainer">
+            <div id="lefttBoxHome">
+                <div id="homephoto"></div>
+            </div>
+            <div id="rightBoxHome">
+                <div id="topRightBoxHome">
+                    The Fabrikam Expense Tracking Application provides your Small Business with simple expense management capabilties for Office365. 
+                    Seamlessly integrating with your existing company's information, you can get up to speed immediately with no 
+                    configuration and no extra effort. It's quick to get started. Click the sign up link to start taking control of 
+                    your employee's expenses.
+                    
+                    
+                </div>
+                <div id="BottomRightBoxHome">
+                    @Html.ActionLink("Sign Up Today", "Index", "Signup")
+                </div>
+            </div>
+        </div>
+        <div id="AzureBottomContainer">
+            <div id="Notice">This is a Demonstration Application for Azure Active Directory Preview</div>
+            <div id="DetailNotice">(C) 2012 <a href="http://www.microsoft.com" title="Microsoft Corporation">Microsoft Corporation</a>. All software is provided as-is and confers no rights and no responibilities from Microsoft. Released under Apache 2.0 license and running in <a href="http://www.windowsazure.com/en-us/" title="Windows Azure"> Windows Azure</a>! Want to build something like this yourself? Fork the code on GitHub <a href="https://github.com/WindowsAzure/azure-sdk-for-dotnet-samples">here</a>. Learn more about <a href="http://msdn.microsoft.com/en-us/library/hh974476.aspx" title="Azure Active Directory">Azure Active Directory.</a> You look nice today.</div>
+        </div>
+    </p>
+}
+    <p>
+         
+
+    </p>

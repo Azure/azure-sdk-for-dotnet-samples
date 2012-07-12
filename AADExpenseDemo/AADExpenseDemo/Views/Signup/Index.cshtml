@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Microsoft.Online.Demos.Aadexpense.Models.Signup>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Authorizing Your Application</h2>
+
+<p>
+    In order to use this demonstration application, you must authorize this application to access an Azure Active Directory enabled tenant. Currently, <b>this is best done through a trial Office365 tenant</b>. This will be the tenant that you 
+    will then use to provide expense reporting services through this application. <b>The Office365 tenant comes with Azure Active Directory built in</b>, providing 
+    an organization with directory, authentication, and authorization services and developers with APIs to provide additional features to these organizations.</p>
+<p class="doclink"> Documentation: <a href="http://msdn.microsoft.com/en-us/library/hh974476.aspx">Learn more about Service Principals on MSDN</a></p>
+<p>
+    Azure Active Directory uses a list of authorized domains in order to ensure an application's access to the tenant is authorized and approved. This is accomplished by creating a <b>Service Principal</b>, a contract stored in Azure that
+indicates the authorization is valid and that your application can access the tenant. This wizard will walk you through this process of creating this Service Principal, and adding this tenant to the application.
+</p>
+
+
+ <h3 class="NOTE">NOTE: Limitations of the Preview</h3>
+    <p>
+        
+        The authorization you are performing will be using PowerShell. This is only required for the Preview of Azure Active Directory. In the future, we will enable you to authorize your applications 
+        with existing Azure Active Directory tenants using a Web Authorization workflow provided by Azure Active Directory. At this time, an Office365 Administrator must use PowerShell to authorize applications for a tenant.
+    </p>
+
+<h3 class="Steps">Step 1 (Optional): Create An Azure Active Directory tenant</h3>
+    <p>
+    If you already have an Office365 subscription and user account not used for production purposes, and you are the Administrator for the subscription, you can use the organization user account in the remaining steps of this walkthrough.  If you do not have 
+        an account to access the Azure Active Directory, you can create an Office365 Trial subscription for testing the SSO scenario.  <a href="http://www.microsoft.com/en-us/office365/online-software.aspx#fbid=8qpYgwknaW"> Start with the Office365 Sign-up page to create a trial subscription and user account.</a>
+The first user account created with a new Office365 subscription is the Administrator for the subscription.
+</p>
+
+<p>When you are done, poceed to Step 2</p>
+
+@Html.ActionLink("Step 2", "Authorize1", "Signup") 

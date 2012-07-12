@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Authorization FAQ";
+    Layout = "~/Views/Shared/_Doc.cshtml";
+}
+@section Content {
+    <h2>Authorizing Your Application</h2>
+
+    <p>
+        In order to use this demonstration application, you must authorize this application to access an Azure Active Directory enabled tenant. Currently, this is best done through a trial Office365 tenant. This will be the tenant that we 
+        will then use to provide expense reporting services through this application. The Office365 tenant comes with Azure Active Directory built in, providing 
+        an organization with directory, authentication, and authorization services and developers with APIs to provide additional features to these organizations.</p>
+    <p class="doclink"> Documentation: Learn more about Service Principals</p>
+    <p>
+
+    <h3>NOTE: Limitations of the Preview</h3>
+    <p>
+        
+        Keep in mind that the authorization you are performing using PowerShell is only required for the Preview of Azure Active Directory. In the future, we will enable you to authorize your applications 
+        with exisitng Azure Active Directory tenants using a Web Authorization page provided by Azure Active Directory. At this time, an Office365 Administrator must use PowerShell to authorize applications for a tenant.
+    </p>
+
+    <h3>Pre-Requisites</h3>
+    <>
+    Authorizing this application will require the following pre-requisites:
+    <ul>
+        <li><a href="http://www.microsoft.com/en-us/office365/online-software.aspx#fbid=8qpYgwknaWN">Create a Microsoft Azure Active Directory Trial Tenant</a> (we do not recommend you use a production tenant for this demo)</li>
+        <li>Download Microsoft Online Services Module for Windows PowerShell <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> and install it on your machine.</li>
+    <li>Download our <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">PowerShell authorization script here.</a> This will walk you through creating the Service Principal.</li>
+    <li>Create some users in the Azure Active Directory tenant. It is important the users who will use the application have a manager who can approve expense invoices.</li>
+        <li>Come back to this application and click on the  @Html.ActionLink("Authorize link", "Authorize1", "Signup") . This will require you to log in to the Azure Active Directory Trial tenant you just created.</li>
+    </ul>
+
+    We cover each of these in detail below:
+
+    <h4>Create a Microsoft Azure Active Directory Trial Tenant</h4>
+    <p>
+        If you already have an Azure Active Directory subscription and user account not used for production purposes, and you are the Administrator for the subscription, you can use the organization user account in the remaining steps of this walkthrough.  If you do not have 
+        an account to access Azure Active Directory, you can create an Azure Active Directory Trial subscription for testing the SSO scenario.  <a href="http://www.microsoft.com/en-us/office365/online-software.aspx#fbid=8qpYgwknaW"> Start with the Azure Active Directory Sign-up page to create a trial subscription and user account.</a>
+        The first user account created with a new Azure Active Directory subscription is the Administrator for the organization subscription.   You may want to create a new organization user account that is not in the Administrator role to use for this walkthrough.
+    </p>
+
+    <h4>Download the Microsoft Online Servics Modules for Windows PowerShell</h4>
+    
+    <p>
+        The ACS used for Azure Active Directory organizations will only issue Identity tokens to your web application after you register the application in the Microsoft online directory for the organization.  
+        To register the app, you need to download the Microsoft Online Services Module for PowerShell. The PowerShell module includes PS cmdlets used for managing identity federation and assigning 
+        user licenses for Office365.  New extensions to the module include PS cmdlets for adding and managing service principals which are used to register your application.
+        Refer to the Azure Active Directory online help page for information on how to install the MSO Services module for PowerShell.
+    </p>
+    <p>You can get the latest PowerShell cmdlets <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> here. </p>
+    <p>
+        After installing the PowerShell module, start the Microsoft Online Services Module for Windows PowerShell command prompt and wait until you are ready to click the @Html.ActionLink("Authorize link", "Authorize1", "Signup") below.
+    </p>
+
+    <h4>Authorize the Application</h4>
+    <p>
+
+        Once you have the following steps completed, you are ready to authorize this demonstration app with your non-production Office365 tenant. Go to the @Html.ActionLink("Authorize link", "Authorize1", "Signup") for next steps.
+   
+    </p>
+}

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Microsoft.Online.Demos.Aadexpense.ServiceReference1.User>
+<table id="searchResults">
+<tr>
+        <th>
+            DisplayName
+        </th>        
+        <th>
+            UserPrincipalName
+        </th>
+        <th>
+            Add to application
+        </th>
+    </tr>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.ActionLink(item.DisplayName, "UserDetails", new { id = item.ObjectId }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserPrincipalName)
+        </td>
+        <td>
+            @Html.ActionLink("Add", "AddUser", "Admin", new { employeeId = item.ObjectId }, null)
+        </td>
+    </tr>
+    }
+}
+</table>

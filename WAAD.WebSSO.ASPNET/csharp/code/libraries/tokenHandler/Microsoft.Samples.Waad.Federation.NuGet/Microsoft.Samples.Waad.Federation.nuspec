@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Office365.Federation</id>
+    <version>0.0.1.0</version>
+    <authors>Microsoft DPE</authors>
+    <owners>Microsoft DPE</owners>
+    <licenseUrl>http://www.opensource.org/licenses/ms-pl</licenseUrl>
+    <description>The library contains the neccesary helper classes in order to achieve federation with Office365/OrgId supporting dynamic trusted issuers</description>
+    <language>en-US</language>
+    <tags>WIF Federation Office365 OrgId</tags>
+  </metadata>
+</package>

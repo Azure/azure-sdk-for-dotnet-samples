@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Microsoft.Online.Demos.Aadexpense.Models.Signup>
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_NoLogin.cshtml";
+}
+
+<h2>Login Through Azure Active Directory</h2>
+<h3>The application functionality you requested requires you to sign-in</h3>
+
+<p>The following Azure Active Directory tenants below have been registered with this application. Don't see yours? Learn how to @Html.ActionLink("authorize your test tenant", "Index", "Signup").</p>
+
+<p>Click the tenant below to sign-in. You will be redirected to the <b>Azure Active Directory</b> service.</p>
+
+@foreach (var issuer in Model)
+{
+    var trustedIssuer = new Microsoft.Online.Demos.Aadexpense.Helpers.TrustedIssuer(issuer.DomainName, issuer.Description, issuer.ServicePrincipalURL);
+<li><a href="@trustedIssuer.LoginUrl">@trustedIssuer.DisplayName</a></li>
+}

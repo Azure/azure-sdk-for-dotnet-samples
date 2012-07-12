@@ -1,0 +1,504 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: #FFFFFF;
+    font-size: .90em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000000;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: #000000;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6
+{
+    font-size: 1em;
+    color: rgb(106, 106, 106);
+    font-family: 'Segoe UI';
+}
+
+/* Application Layout Elements  
+----------------------------------------------------------*/
+
+#Header {
+    height: 170px;
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#LoginHeader {
+    height: 20px;
+    padding-right: 70px;
+}
+
+
+#TopHeader {
+
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+#travelogo
+{
+    background-image: url('travel-metro.png');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+#traveltitle {
+    float: left;
+}
+
+#BottomHeader {
+    height: 70px;
+}
+
+#Body {
+
+    margin-top: 10px;
+}
+
+.NOTE
+{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.Steps
+{
+    font-family: 'Segoe UI';
+    font-size: x-large;
+}
+
+.code
+{
+    border-width: 1px;
+    border-style: inset;
+    padding: 2px;
+    background-color: #000000;
+    font-family: 'Courier New';
+    color: #FFFFFF;
+}
+
+#HomeContainer
+{
+    width: 90%;
+    height: 300px;
+    font-size: large;
+    background: whitesmoke;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding-right: 10px;
+    text-decoration: none !important;
+}
+
+#homephoto 
+{
+    background-image: url('travel-metro2.png');
+    background-repeat: no-repeat;
+    width: 375px;
+    height: 320px;
+    float: left;
+    
+}
+
+#rightBoxHome {
+    width: 50%;
+    height: 300px;
+    float: right;
+}
+
+#topRightBoxHome
+{
+    height: 50%;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+#BottomRightBoxHome
+{
+    height: 50%;
+    padding-top: 10px;
+}
+#leftBoxHome {
+    width: 50%;
+    height: 300px;
+    float: left;
+}
+
+#AzureBottomContainer {
+
+    margin-top: 40px;
+    height: 40px;
+    background-color: black;
+    width: 90%;
+    padding-left: 10px;
+}
+
+#Notice
+{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+}
+
+#DetailNotice
+{
+    font-family: 'Segoe UI';
+    color: #000000;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+#docmain {
+   
+}
+
+#DocLeft {
+
+    width: 80%;
+    float: left;
+    border-right-style: inset;
+    border-right-width: thin;
+    border-right-color: #C0C0C0;
+    padding-right: 5px;
+   
+}
+
+#DocRight
+{
+    width: 15%;
+    float: right;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+
+
+.page {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+header, #header {
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+    
+}
+
+header h1, #header h1
+{
+    font-weight: normal;
+    color: #232222;
+    border: none;
+    line-height: 2em;
+    font-size: 28px !important;
+    margin-left: 40px;
+}
+
+#main {
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    margin-left: 40px;
+}
+
+footer, 
+#footer {
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    border-bottom: 1px #5C87B2 solid;
+    border-bottom-color: #333333;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #CCCCCC;
+    color: #000000;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+#InvoiceDetailView
+{
+    font-size: medium;
+    width: 80%;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea
+{
+    min-height: 75px;
+    width: 400px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+
+
+/* TABLE
+----------------------------------------------------------*/
+
+table
+{
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    width: 95%;
+
+}
+
+#logindisplay a:link {
+    color: black;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    color: black;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
