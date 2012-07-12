@@ -6,8 +6,8 @@ to use a different color start by replacing all instances of
 body
 {
     background-color: #FFFFFF;
-    font-size: .85em;
-    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    font-size: .90em;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     color: #000000;
@@ -15,7 +15,7 @@ body
 
 a:link {
     color: #034af3;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:visited {
@@ -47,7 +47,7 @@ section {
 ----------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
-    color: #000;
+    color: #000000;
 }
 
 h1
@@ -70,8 +70,15 @@ h4 {
     font-size: 1.1em;
 }
 
-h5, h6 {
+h5 {
     font-size: 1em;
+}
+
+h6
+{
+    font-size: 1em;
+    color: rgb(106, 106, 106);
+    font-family: 'Segoe UI';
 }
 
 /* Application Layout Elements  
@@ -86,6 +93,7 @@ h5, h6 {
 
 #LoginHeader {
     height: 20px;
+    padding-right: 70px;
 }
 
 
@@ -145,17 +153,17 @@ h5, h6 {
 {
     width: 90%;
     height: 300px;
-    font-family: 'Segoe UI';
     font-size: large;
-    background-image: url('siteBackground.jpg');
+    background: whitesmoke;
     background-repeat: no-repeat;
-    font-weight: bold;
     overflow: hidden;
+    padding-right: 10px;
+    text-decoration: none !important;
 }
 
 #homephoto 
 {
-    background-image: url('stock-photo-people-pictures.jpg');
+    background-image: url('travel-metro2.png');
     background-repeat: no-repeat;
     width: 375px;
     height: 320px;
@@ -192,7 +200,8 @@ h5, h6 {
     margin-top: 40px;
     height: 40px;
     background-color: black;
-    width: 90%
+    width: 90%;
+    padding-left: 10px;
 }
 
 #Notice
@@ -211,6 +220,27 @@ h5, h6 {
     color: #000000;
     font-size: medium;
     margin-top: 20px;
+}
+
+#docmain {
+   
+}
+
+#DocLeft {
+
+    width: 80%;
+    float: left;
+    border-right-style: inset;
+    border-right-width: thin;
+    border-right-color: #C0C0C0;
+    padding-right: 5px;
+   
+}
+
+#DocRight
+{
+    width: 15%;
+    float: right;
 }
 
 /* PRIMARY LAYOUT ELEMENTS   
@@ -238,11 +268,10 @@ header, #header {
 header h1, #header h1
 {
     font-weight: normal;
-    color: #808080;
+    color: #232222;
     border: none;
     line-height: 2em;
     font-size: 28px !important;
-    font-family: 'Segoe UI';
     margin-left: 40px;
 }
 

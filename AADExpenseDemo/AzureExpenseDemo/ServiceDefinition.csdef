@@ -9,7 +9,7 @@
       </Site>
     </Sites>
     <Endpoints>
-      <InputEndpoint name="HttpsIn" protocol="https" port="443" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="8080" />
     </Endpoints>
     <Imports>
     </Imports>

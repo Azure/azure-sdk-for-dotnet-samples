@@ -17,7 +17,7 @@
 //
 // <summary>
 //     
-// 
+// Provides the constants we will use to generate the authorization URL to the Access Control Service
 //
 // </summary>
 //----------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ namespace Microsoft.Online.Demos.Aadexpense.Helpers
     internal static class Constants
     {
 
-        internal const string LoginUrlPattern = "https://accounts.accesscontrol.windows-ppe.net/v2/wsfederation?wa=wsignin1.0&wtrealm={0}&wreply={1}";
+        internal const string LoginUrlPattern = "https://accounts.accesscontrol.windows.net/v2/wsfederation?wa=wsignin1.0&wtrealm={0}&wreply={1}";
         internal const string RepositoryIssuerElementName = "issuer";
         internal const string RepositoryNameAttribute = "name";
         internal const string RepositoryDisplayNameAttribute = "displayName";

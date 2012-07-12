@@ -34,7 +34,7 @@ using System.Web.Mvc;
 using Microsoft.IdentityModel.Claims;
 using Microsoft.Online.Demos.Aadexpense.ActionFilters;
 using Microsoft.Online.Demos.Aadexpense.Models;
-using Microsoft.Online.DirectoryApi.ServiceReference1;
+using Microsoft.Online.Demos.Aadexpense.ServiceReference1;
 
 namespace Microsoft.Online.Demos.Aadexpense.Controllers
 {

@@ -45,5 +45,20 @@ namespace Microsoft.Online.Demos.Aadexpense.Controllers
             return View();
         }
 
+        public ActionResult Doc_CreatingManagers()
+        {
+            return View();
+        }
+
+        public ActionResult Doc_DesignDetail()
+        {
+            return View();
+        }
+
+        public ActionResult Doc_PowerShell()
+        {
+            return View();
+        }
+
     }
 }

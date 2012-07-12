@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b38ec85a-dd69-4607-8e21-01b850c38be5" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a44eee45-47e4-4019-83e0-0d38b2ec6cba" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
-    <MetadataSource Address="http://msodsgraph-ppe.cloudapp.net" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://directory.windows.net/$metadata" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="7ce2ed18-9cd2-445c-9abb-742d5f2e4f38" SourceId="1" SourceUrl="http://msodsgraph-ppe.cloudapp.net" />
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="27fea164-cbfe-41bb-ad18-0d66c3d2e715" SourceId="1" SourceUrl="https://directory.windows.net/$metadata" />
   </Metadata>
   <Extensions />
   <Parameters>

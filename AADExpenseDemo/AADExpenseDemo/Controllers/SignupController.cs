@@ -25,6 +25,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -38,6 +39,7 @@ namespace Microsoft.Online.Demos.Aadexpense.Controllers
     {
 
         private readonly DemoDatabase _db = new DemoDatabase();
+        private string fileName;
         // Track whether Dispose has been called.
         private bool _disposed;
         //
@@ -77,7 +79,8 @@ namespace Microsoft.Online.Demos.Aadexpense.Controllers
         {
             return View();
         }
-
+        
+        
         protected virtual void Dispose()
         {
             Dispose(true);

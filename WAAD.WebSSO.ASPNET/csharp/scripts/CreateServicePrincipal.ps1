@@ -50,11 +50,11 @@ Import-Module MSOnlineExtended
 ""
 "Using a symmetric key to idenify you to Azure Active Directory. This is currently a default key for Demo purposes. You can change it in the PowerShell script."
 " "
-$credValue = "0guCAQnwLuTtpa+jWkam1Y/gcGsRzEOOOA2+Illt5bQ="
+$credValue = "FStnXT1QON84B5o38aEmFdlNhEnYtzJ91Gg/JH/Jxiw="
 $credType = "Symmetric"
 
 # replyURL is used to for configuring webSSO
-$replyHost = "aadexpensedemo.cloudapp.net"
+$replyHost = "localhost:8080"
 $replyAddress = "https://" + $replyHost + "/"
 $replyUrl = New-MsolServicePrincipalAddresses –Address $replyAddress
 " "

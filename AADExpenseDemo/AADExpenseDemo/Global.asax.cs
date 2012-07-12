@@ -17,7 +17,7 @@ namespace Microsoft.Online.Demos.Aadexpense
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new IdentityClaimsAttribute());
+            // filters.Add(new IdentityClaimsAttribute()); Note: Uncomment to see the Claims that are returned after authorization
             filters.Add(new RequireAuthenticatedAttribute());
         }
 

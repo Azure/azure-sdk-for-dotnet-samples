@@ -10,57 +10,57 @@
     <script src="@Url.Content("https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-1.7-development-only.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/ExpenseDemo.js")" type="text/javascript"></script>
 </head>
-<body>
-    <div id="page">
-        <header>
-            <div id="Header">
-                <div id="TopHeader">
-                    <div id="LoginHeader">
-                        <div id="logindisplay">
+    <body>
+        <div id="page">
+            <header>
+                <div id="Header">
+                    <div id="TopHeader">
+                        <div id="LoginHeader">
+                            <div id="logindisplay">
 
+                            </div>
+                        </div>
+                        <div id="travelogo"></div>
+                        <div id="traveltitle">
+                            <div id="title">
+                                <h1>Fabrikam Expense Tracking Application</h1>
+                            </div>
                         </div>
                     </div>
-                    <div id="travelogo"></div>
-                    <div id="traveltitle">
-                        <div id="title">
-                            <h1>Fabrikam Expense Tracking Application</h1>
-                        </div>
-                        </div>
-                </div>
-                <div id="BottomHeader">
-                    <nav>
-                        <ul id="menu">
+                    <div id="BottomHeader">
+                        <nav>
+                            <ul id="menu">
 
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Documentation", "Index", "Documentation")</li>
-                             @if (ViewData["IsAuthenticated"] != null && ViewData["IsAuthorized"] != null)
-                             {
-                                 <li>@Html.ActionLink("View Your Expense Reports", "Index", "Invoice")</li>
-                             }
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Documentation", "Index", "Documentation")</li>
+                                @if (ViewData["IsAuthenticated"] != null && ViewData["IsAuthorized"] != null)
+                                {
+                                    <li>@Html.ActionLink("View Your Expense Reports", "Index", "Invoice")</li>
+                                }
 
-                                 @if (ViewData["IsManager"] != null)
-                                  {
-                                      <li>@Html.ActionLink("Approve Expense Reports", "Index", "Manager")</li>
-                                  }
+                                @if (ViewData["IsManager"] != null)
+                                {
+                                    <li>@Html.ActionLink("Approve Expense Reports", "Index", "Manager")</li>
+                                }
 
-                                 @if (ViewData["IsAdministrator"] != null)
-                                  {
-                                      <li>@Html.ActionLink("Add Users To Application", "Index", "Admin")</li>
-                                  }
+                                @if (ViewData["IsAdministrator"] != null)
+                                {
+                                    <li>@Html.ActionLink("Add Users To Application", "Index", "Admin")</li>
+                                }
 
    
-                        </ul>
-                    </nav>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
+            </header>
+            <div id="Body">
+                <section id="main">
+                    @RenderBody()
+                </section>
             </div>
-        </header>
-        <div id="Body">
-            <section id="main">
-                @RenderBody()
-            </section>
-            </div>
-        <footer>
-        </footer>
-    </div>
-</body>
+            <footer>
+            </footer>
+        </div>
+    </body>
 </html>

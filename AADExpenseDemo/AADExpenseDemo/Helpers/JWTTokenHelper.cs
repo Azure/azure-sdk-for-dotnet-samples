@@ -50,7 +50,7 @@ namespace Microsoft.Online.DirectoryApi.TokenHelper
         /// Gets the well known principal id of ACS.
         /// Each ACS instance can have a unique id.
         /// </summary>
-        public const string AcsPrincipalId = "00000001-0001-0000-c000-000000000000";
+        public const string AcsPrincipalId = "00000001-0000-0000-c000-000000000000";
 
         /// <summary>
         /// Grant type claim

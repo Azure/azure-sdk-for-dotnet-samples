@@ -37,14 +37,14 @@ using System.Reflection;
 using System.Threading;
 using Microsoft.IdentityModel.Claims;
 using Microsoft.Online.Demos.Aadexpense.Helpers;
-using Microsoft.Online.DirectoryApi.ServiceReference1;
+using Microsoft.Online.Demos.Aadexpense.ServiceReference1;
 using Microsoft.Online.DirectoryApi.TokenHelper;
 
 namespace Microsoft.Online.Demos.Aadexpense.Models
 {
     public class RestApiInterface : IDisposable, IFactoryConnection, IConnection
     {
-        private readonly Microsoft.Online.DirectoryApi.ServiceReference1.DirectoryDataService dataService;
+        private readonly Microsoft.Online.Demos.Aadexpense.ServiceReference1.DirectoryDataService dataService;
         private Uri _connectionUri;
         private string _tenantContextId;
         private string _protectedResourcePrincipalId;
@@ -100,7 +100,7 @@ namespace Microsoft.Online.Demos.Aadexpense.Models
             _db = new DemoDatabase();
 
             ReadConfigurations();
-            dataService = new Microsoft.Online.DirectoryApi.ServiceReference1.DirectoryDataService(_connectionUri)
+            dataService = new Microsoft.Online.Demos.Aadexpense.ServiceReference1.DirectoryDataService(_connectionUri)
                               {IgnoreResourceNotFoundException = true};
             AddHeaders();
         }

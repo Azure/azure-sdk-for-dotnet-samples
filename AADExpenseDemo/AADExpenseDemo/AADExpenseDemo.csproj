@@ -86,7 +86,6 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFilters\CreateGuidOnStartupAttribute.cs" />
     <Compile Include="ActionFilters\IdentityClaimsAttribute.cs" />
     <Compile Include="ActionFilters\RequireAuthenticatedAttribute.cs" />
     <Compile Include="ConnectionFactories\ConnectionFactory.cs" />
@@ -128,7 +127,11 @@
     <Compile Include="WebRole.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\msSQLaddlogin.jpg" />
+    <Content Include="Content\msSQLchange.jpg" />
+    <Content Include="Content\msSQLserverrole.jpg" />
     <Content Include="Content\travel-metro.png" />
+    <Content Include="Content\travel-metro2.png" />
     <Content Include="FederationMetadata\2007-06\FederationMetadata.xml" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ExpenseDemo.js" />

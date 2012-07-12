@@ -9,8 +9,8 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 6/6/2012 10:08:05 AM
-namespace Microsoft.Online.DirectoryApi.ServiceReference1
+// Generation date: 7/11/2012 10:29:56 PM
+namespace Microsoft.Online.Demos.Aadexpense.ServiceReference1
 {
     
     /// <summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Online.DirectoryApi.ServiceReference1
         {
             if (typeName.StartsWith("Microsoft.Online.DirectoryApi", global::System.StringComparison.Ordinal))
             {
-                return this.GetType().Assembly.GetType(string.Concat("Microsoft.Online.DirectoryApi.ServiceReference1", typeName.Substring(29)), false);
+                return this.GetType().Assembly.GetType(string.Concat("Microsoft.Online.Demos.Aadexpense.ServiceReference1", typeName.Substring(29)), false);
             }
             return null;
         }
@@ -52,7 +52,7 @@ namespace Microsoft.Online.DirectoryApi.ServiceReference1
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
-            if (clientType.Namespace.Equals("Microsoft.Online.DirectoryApi.ServiceReference1", global::System.StringComparison.Ordinal))
+            if (clientType.Namespace.Equals("Microsoft.Online.Demos.Aadexpense.ServiceReference1", global::System.StringComparison.Ordinal))
             {
                 return string.Concat("Microsoft.Online.DirectoryApi.", clientType.Name);
             }
@@ -1942,47 +1942,47 @@ namespace Microsoft.Online.DirectoryApi.ServiceReference1
         partial void OnInitialChanging(global::System.Nullable<bool> value);
         partial void OnInitialChanged();
         /// <summary>
-        /// There are no comments for Property LiveNetId in the schema.
+        /// There are no comments for Property Id in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string LiveNetId
+        public string Id
         {
             get
             {
-                return this._LiveNetId;
+                return this._Id;
             }
             set
             {
-                this.OnLiveNetIdChanging(value);
-                this._LiveNetId = value;
-                this.OnLiveNetIdChanged();
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _LiveNetId;
-        partial void OnLiveNetIdChanging(string value);
-        partial void OnLiveNetIdChanged();
+        private string _Id;
+        partial void OnIdChanging(string value);
+        partial void OnIdChanged();
         /// <summary>
-        /// There are no comments for Property LiveType in the schema.
+        /// There are no comments for Property Type in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string LiveType
+        public string Type
         {
             get
             {
-                return this._LiveType;
+                return this._Type;
             }
             set
             {
-                this.OnLiveTypeChanging(value);
-                this._LiveType = value;
-                this.OnLiveTypeChanged();
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _LiveType;
-        partial void OnLiveTypeChanging(string value);
-        partial void OnLiveTypeChanged();
+        private string _Type;
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>

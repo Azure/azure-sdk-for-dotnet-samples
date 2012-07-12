@@ -45,7 +45,7 @@ using System;
 using System.Web;
 using System.Linq;
 using Microsoft.Online.Demos.Aadexpense.Models;
-using Microsoft.Online.DirectoryApi.ServiceReference1;
+using Microsoft.Online.Demos.Aadexpense.ServiceReference1;
 
 
 namespace Microsoft.Online.Demos.Aadexpense.ActionFilters
@@ -100,8 +100,6 @@ namespace Microsoft.Online.Demos.Aadexpense.ActionFilters
 //                var restAPI = new RestApiInterface();
                 _user = restAPI.GetUserByEmail(_email);
                 filterContext.Controller.ViewData["IsAuthenticated"] = true;
-
-                Initializer();
 
                 var k = from r in _db.AuthorizedUsers
                         where r.EmployeeGUID == _user.ObjectId

@@ -18,11 +18,10 @@
       </Site>
     </Sites>
     <Endpoints>
-      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="aadexpensedemo" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="8080" />
     </Endpoints>
     <Imports></Imports>
-    <Certificates>
-    </Certificates>
+    <Certificates></Certificates>
     <ConfigurationSettings></ConfigurationSettings>
   </WebRole>
 </ServiceDefinition>

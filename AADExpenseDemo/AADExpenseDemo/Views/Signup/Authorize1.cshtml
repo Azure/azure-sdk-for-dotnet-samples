@@ -16,8 +16,8 @@
 <p> This step will require you to perform some pre-requisites in order to proceed:</p>
 
 <ul>
-    <li>Download <a href="https://bposast.vo.msecnd.net/MSOPMW/5164.009/amd64/administrationconfig-en.msi">Microsoft Online Services Module for Windows PowerShell</a> and install it on your machine.</li>
-    <li>Download our <a href="@Url.Content("~/PS/CreateServicePrincipal.ps1")">PowerShell authorization script here.</a> This will walk you through creating the Service Principal.</li>
+    <li>Download Microsoft Online Services Module for Windows PowerShell <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> and install it on your machine.</li>
+    <li>Download our <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">PowerShell authorization script here.</a> This will walk you through creating the Service Principal.</li>
     <li>Create some users in the Azure Active Directory tenant. It is important the users who will use the application have a manager who can approve expense invoices.</li>
 </ul>
 <p>Once these steps are completed, run the PowerShell script indicated above, then put the values in the field below. We will use this to configure the Expense application for you.</p>
@@ -32,14 +32,14 @@
         user licenses for Office365.  New extensions to the module include PS cmdlets for adding and managing service principals which are used to register your application.
         Refer to the Azure Active Directory online help page for information on how to install the MSO Services module for PowerShell.
     </p>
-<p>You can get the latest PowerShell cmdlets <a href="https://bposast.vo.msecnd.net/MSOPMW/5164.009/amd64/administrationconfig-en.msi">here.</a> </p>
+<p>You can get the latest PowerShell cmdlets <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-32bit.msi">32-bit Version</a> / <a href="http://iddemo.blob.core.windows.net/files/AdministrationConfig-en-64bit.msi">64-bit version</a> here. </p>
 <p>
     After installing the PowerShell module, run the Azure Active Directory Demo script you downloaded to create the Service Principal in the Windows PowerShell command prompt.
 </p>
 
 <h5>Run the provided PowerShell script to create the Service Principal for your selected Office365 tenant</h5>
 
-<p>Inside of the Microsoft Online Services Module for Windows PowerShell command window, execute the provided PowerShell script. A walkthrough of what this PowerShell script does is available here. </p>
+<p>Inside of the Microsoft Online Services Module for Windows PowerShell command window, execute the <a href="http://iddemo.blob.core.windows.net/files/CreateServicePrincipal.ps1">provided PowerShell script</a>. A walkthrough of what this PowerShell script does is available here. </p>
 
 <p>
     <div class="code">PS C:\Windows\system32> CreateServicePrincipal.ps1</div>
