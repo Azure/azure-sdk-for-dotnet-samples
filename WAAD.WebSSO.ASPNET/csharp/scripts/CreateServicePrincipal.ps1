@@ -101,5 +101,5 @@ $tenantId = (get-msolcompanyinformation).objectId
 "Company ID (you will need to put this in the portal): " + $tenantId
 "AppPrincipal ID(you will need to put this in the portal): " + $sp.AppPrincipalId
 if ($credType = "Asymmetric"){"App Principal Secret: " + $credValue}
-"Audience URI: " + $sp.AppPrincipalID + "@" + $tenantId
+"Audience URI: " + $sp.AppPrincipalID
 ""
