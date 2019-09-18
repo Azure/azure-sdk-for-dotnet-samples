@@ -30,15 +30,21 @@ namespace CloudClipboard
 
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Add v11 CloudBlobClient
+            /*
+            AzureServiceTokenProvider tokenProvider = new AzureServiceTokenProvider();
+            string token = tokenProvider.GetAccessTokenAsync("https://storage.azure.com/").GetAwaiter().GetResult();
+            TokenCredential tokenCredential = new TokenCredential(token);
+            StorageCredentials storageCredentials = new StorageCredentials(tokenCredential);
+            CloudBlobClient blobClient = new CloudBlobClient(new Uri(Configuration["BlobServiceUri"]), storageCredentials);
+            services.AddSingleton(blobClient);
+            /**/
+            #endregion
+
+            #region Add v12 BlobServiceClient
+
             services.AddAzureClients(builder => builder.AddBlobServiceClient(new Uri(Configuration["BlobServiceUri"])));
 
-            #region Add v11 CloudBlobClient
-            // AzureServiceTokenProvider tokenProvider = new AzureServiceTokenProvider();
-            // string token = tokenProvider.GetAccessTokenAsync("https://storage.azure.com/").GetAwaiter().GetResult();
-            // TokenCredential tokenCredential = new TokenCredential(token);
-            // StorageCredentials storageCredentials = new StorageCredentials(tokenCredential);
-            // CloudBlobClient blobClient = new CloudBlobClient(new Uri(Configuration["BlobServiceUri"]), storageCredentials);
-            // services.AddSingleton(blobClient);
             #endregion
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

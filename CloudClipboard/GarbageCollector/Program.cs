@@ -13,26 +13,20 @@ namespace GarbageCollector
 
         public static async Task Main()
         {
-            BlobClientOptions options = new BlobClientOptions
-            {
-                Retry =
-                {
-                    MaxRetries = 10,
-                    Delay = TimeSpan.FromSeconds(3)
-                },
-                Diagnostics =
-                {
-                    IsLoggingEnabled = true
-                }
-            };
+            BlobClientOptions options = new BlobClientOptions();
+            options.Retry.MaxRetries = 10;
+            options.Retry.Delay = TimeSpan.FromSeconds(3);
+            options.Diagnostics.IsLoggingEnabled = true;
 
-            options.AddPolicy(HttpPipelinePosition.PerCall, new SimpleTracingPolicy());
+
+            options.AddPolicy(new SimpleTracingPolicy(), HttpPipelinePosition.PerCall);
 
 
             BlobServiceClient serviceClient = new BlobServiceClient(BlobServiceUri, new DefaultAzureCredential(), options);
             await foreach (ContainerItem container in serviceClient.GetContainersAsync())
             {
-                await serviceClient.GetBlobContainerClient(container.Name).DeleteAsync();
+                BlobContainerClient containerClient = serviceClient.GetBlobContainerClient(container.Name);
+                await containerClient.DeleteAsync();
             }
         }
     }
@@ -43,7 +37,7 @@ namespace GarbageCollector
         {
             Console.WriteLine($">> Request: {message.Request.Method} {message.Request.UriBuilder.Uri}");
             await ProcessNextAsync(message, pipeline);
-            Console.WriteLine($">> Response: {message.Response.Status} from {message.Request.Method} {message.Request.UriBuilder.Uri}");
+            Console.WriteLine($">> Response: {message.Response.Status} from {message.Request.Method} {message.Request.UriBuilder.Uri}\n");
         }
 
         #region public override void Process
